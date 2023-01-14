@@ -1,0 +1,23 @@
+name: emorec
+channels:
+  - pytorch
+  - nvidia
+  - huggingface
+dependencies:
+  - python=3.9.6
+  - pip
+  - torchvision
+  - pytorch=1.10.1
+  - cudatoolkit=11.1.1
+  - nltk
+  - scikit-learn
+  - pandas
+  - jupyter
+  - pip:
+    - transformers
+    - pytorch-lightning
+    - torchmetrics
+    - dotmap
+    - vaderSentiment
+    - tensorboard
+prefix: /anaconda3/envs/emorec

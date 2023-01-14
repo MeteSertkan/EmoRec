@@ -1,0 +1,100 @@
+# EmoRec_Cat
+
+# INFO
+name: emorec
+
+#
+# DATA
+#
+# behavior
+train_behavior: "data/train/train_behavior.tsv"
+val_behavior: "data/train/val_behavior.tsv"
+test_behavior: "data/test/test_behavior.tsv"
+# news
+train_news: "data/train/parsed_news_.tsv"
+test_news: "data/test/parsed_news_.tsv"
+# idx maps 
+user2int: "data/train/user2int.tsv"
+word2int: "data/test/word2int.tsv"
+category2int: "data/train/category2int.tsv"
+# word embedding weights --> here use the embedding_weights 
+# resulting after the test news processing
+# so link to <test_dir>/embedding_weights.csv
+embedding_weights: "data/test/embedding_weights.csv"
+
+max_history: 50  # Number of sampled click history for each user
+num_words_title: 20
+num_words_abstract: 50
+num_emotions: 28
+num_emotions_grouped: 4
+num_emotions_ekman: 7
+
+
+#MODEL 
+learning_rate: 0.0001
+dropout_probability: 0.2
+# For additive attention
+query_vector_dim: 200
+# For SelfAttention
+num_attention_heads: 15
+# TEXT
+word_embedding_dim: 300
+freeze_word_embeddings: False
+# CATEGORIES
+num_categories: 275
+category_embedding_dim: 100
+# EMOTIONS
+emotion_taxonomy: "emotions_ekman"
+emotion_dim: 7
+num_attention_heads_emotions: 1
+
+
+# TRAINING
+# Checkpoint
+checkpoint:
+  dirpath: "logs/lightning_logs/checkpoints/emorec/ekman"
+  filename: "{epoch}-{val_auc_epoch:.4f}"
+  save_top_k: 3
+  verbose: True
+  monitor: "val_auc_epoch"
+  mode: "max"
+  save_last: True
+
+#Logging
+logger:
+  save_dir: "/mnt/nvme-local/msertkan/emorec/logs/TB"
+  name: "emorec"
+  version: "ekman"
+
+#EarlyStop
+early_stop:
+  monitor: 'val_auc_epoch'
+  min_delta: 0.0001
+  patience: 10
+  strict: False
+  verbose: True
+  mode: 'max'
+
+# DataLoader
+train_dataloader:
+  num_workers: 8
+  batch_size: 64
+  shuffle: True
+  drop_last: True
+val_dataloader:
+  num_workers: 16
+  batch_size: 1 # must be one by design TODO make it better :)
+  shuffle: False
+  drop_last: False
+test_dataloader:
+  num_workers: 16
+  batch_size: 1 # must be one by design TODO make it better :)
+  shuffle: False
+  drop_last: False
+
+# Trainer
+trainer:
+  max_epochs: 100
+  accelerator: "gpu"
+  strategy: "ddp_find_unused_parameters_false"
+  fast_dev_run: False

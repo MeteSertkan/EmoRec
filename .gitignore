@@ -127,3 +127,21 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# vscode
+.vscode
+
+# dask-worker-space
+dask-worker-space/
+
+#profiler output
+*_profile.txt
+
+*.sh
+*.DS_Store
+
+project/data/MIND
+project/data/train
+project/data/test
+procject/data/word_embeddings
+project/logs/
