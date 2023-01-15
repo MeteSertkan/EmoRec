@@ -55,7 +55,7 @@ bash prep.sh
 This will create necessary folders, download the [MIND dataset](https://msnews.github.io), download glove embeddings, preprocess the data, and create train & test sets. 
 
 ## Config
-We provide for each of the utilized emotion taxonomies, a config file under ``project/config/model/emorec/_taxonomy_name_``. The config files contain general information, hyperparameters (which we have obtained), meta-information (logging, checkpointing, ...). Please, change the config according to your needs. You may want to change the paths to: i) train/test - data; ii) directory for the checkpoints; iii) directory for the logging. You may consider to set ``fast_dev_run`` to ``TRUE`` for a quick check if everything runs smoothly. 
+We provide for each of the utilized emotion taxonomies, a config file under ``project/config/model/emorec/_taxonomy_name_``. The config files contain general information, hyperparameters (which we have obtained), meta-information (logging, checkpointing, ...). Please, change the config according to your needs. You may want to change the paths to: i) train/test - data; ii) directory for the checkpoints; iii) directory for the logging. You may consider to set ``fast_dev_run`` to ``True`` for a quick check if everything runs smoothly. 
 
 # RUN
 Switch to the project folder, e.g., ``cd ..`` if you currently are in the ``project/data`` folder. 
