@@ -1,6 +1,4 @@
-# EmoRec
-
-Welcome 👋 to the repo of our paper:
+# EmoRec 👋 
 
 **Exploring Expressed Emotions for Neural News Recommendation**<br/>
 Mete Sertkan and Julia Neidhardt<br/>
@@ -29,6 +27,26 @@ Please feel free to use our source code and let us know if you have any question
 	url          = {https://doi.org/10.1145/3511047.3536414},
 	numpages     = 7,
 	keywords     = {news recommendation, neural networks, emotions, diversity}
+}
+```
+
+<br/>
+
+**On the Effect of Incorporating Expressed Emotions in News Articles on Diversity within Recommendation Models**<br/>
+Mete Sertkan and Julia Neidhardt<br/>
+[https://ceur-ws.org/Vol-3561/paper5.pdf](https://ceur-ws.org/Vol-3561/paper5.pdf)
+
+**tldr;**  Despite news articles being highly edited and trimmed to maintain a neutral and objective tone, there are still stylistic residues of authors like expressed emotions, which impact the decision-making of users whether or not to consume the recommended articles. In this study, we delve into the effects of incorporating emotional signals within the 𝐸𝑚𝑜𝑅𝑒𝑐 model on both emotional and topical diversity in news recommendations. Our findings show a nuanced alignment with users’ preferences, leading to less diversity and potential creation of an “emotion chamber.” However, it is crucial to model these emotional dimensions explicitly rather than implicitly as contemporary deep-learning models do. This approach offers the opportunity to communicate and raise awareness about the reduction in diversity, allowing for interventions if necessary. We further explore the complex distinction between intra-list and user-centric diversity, sparking a critical debate on guiding user choices. Overall, our work emphasizes the importance of a balanced, ethically-grounded approach, paving the way for more informed and diverse news consumption.
+
+**Please cite our work as:**
+```
+@article{sertkan2023effect,
+	title        = {On the Effect of Incorporating Expressed Emotions in News Articles on Diversity within Recommendation Models},
+	author       = {Sertkan, Mete and Neidhardt, Julia},
+	year         = 2023,
+	journal      = {decision-making},
+	volume       = 3,
+	pages        = 11
 }
 ```
 
